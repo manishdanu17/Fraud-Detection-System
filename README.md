@@ -1,24 +1,44 @@
-# AI-Based Sentiment Analysis
+# Credit Card Fraud Detection
 
 ## Overview
 
-This project is a machine learning based sentiment analysis system
-that analyzes movie reviews and classifies them as Positive or Negative.
+This project is an AI/ML-based Credit Card Fraud Detection System that identifies potentially fraudulent transactions using machine learning.
+
+The project focuses on handling highly imbalanced transaction data and improving fraud detection by comparing multiple machine learning models, applying imbalance-handling techniques, and optimizing the classification threshold.
 
 ## Features
 
-- Text preprocessing
-- TF-IDF feature extraction
-- Machine learning based sentiment classification
-- Model evaluation
-- Sentiment prediction
+- Exploratory Data Analysis (EDA)
+- Data preprocessing and feature scaling
+- Logistic Regression baseline
+- Random Forest classification
+- XGBoost classification
+- Class-weighted machine learning
+- SMOTE for handling class imbalance
+- Classification threshold optimization
+- Model evaluation using fraud-focused metrics
+- SHAP-based model explainability
+- Saved trained model for prediction
 - Streamlit web application
 
 ## Dataset
 
-The project uses the IMDb 50K Movie Reviews dataset.
+The project uses the Credit Card Fraud Detection dataset.
 
-The dataset contains 50,000 movie reviews labeled as Positive or Negative.
+The dataset contains:
+
+- 284,807 transactions
+- 30 input features
+- 1 target variable (`Class`)
+- 284,315 legitimate transactions
+- 492 fraudulent transactions
+
+The `Class` column represents:
+
+- `0` → Legitimate transaction
+- `1` → Fraudulent transaction
+
+The dataset is highly imbalanced, making accuracy alone unsuitable for evaluating the model.
 
 ## Technologies Used
 
@@ -26,47 +46,39 @@ The dataset contains 50,000 movie reviews labeled as Positive or Negative.
 - Pandas
 - NumPy
 - Scikit-learn
+- XGBoost
+- Imbalanced-learn
 - Matplotlib
 - Seaborn
+- SHAP
+- Joblib
 - Streamlit
 
-## Machine Learning
+## Machine Learning Workflow
 
-The project uses:
-
-- TF-IDF for text feature extraction
-- Logistic Regression for sentiment classification
-
-## Project Structure
-
-SentimentAnalysis/
-├── data/
-├── notebooks/
-├── models/
-├── app.py
-├── requirements.txt
-├── README.md
-├── .gitignore
-└── LICENSE
-
-## How to Run
-
-### 1. Clone the repository
-
-git clone YOUR_GITHUB_REPOSITORY_URL
-
-### 2. Install dependencies
-
-pip install -r requirements.txt
-
-### 3. Run the application
-
-streamlit run app.py
-
-## Results
-
-Model performance and evaluation metrics are documented in the notebook.
-
-## Author
-
-Your Name
+```text
+Raw Data
+    ↓
+Data Exploration
+    ↓
+Train/Test Split
+    ↓
+Feature Scaling
+    ↓
+Baseline Models
+    ↓
+Class Imbalance Handling
+    ↓
+SMOTE
+    ↓
+XGBoost
+    ↓
+Threshold Optimization
+    ↓
+Model Evaluation
+    ↓
+SHAP Explainability
+    ↓
+Model Saving
+    ↓
+Streamlit Application
